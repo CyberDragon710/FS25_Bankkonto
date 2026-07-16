@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <modDesc descVersion="110">
 
-    <author>DeinName</author>
-    <version>1.0.0.0</version>
+    <author>CyberDragon710</author>
+    <version>0.1.0.0</version>
 
     <title>
         <en>Bank Account</en>
@@ -10,11 +10,9 @@
     </title>
 
     <description>
-        <en>Deposit money, withdraw money and earn monthly interest.</en>
-        <de>Geld einzahlen, auszahlen und monatliche Zinsen erhalten.</de>
+        <en>Bank system for Farming Simulator 25.</en>
+        <de>Bankensystem für den Landwirtschafts-Simulator 25.</de>
     </description>
-
-    <iconFilename>icon_bank.dds</iconFilename>
 
     <multiplayer supported="true"/>
 
