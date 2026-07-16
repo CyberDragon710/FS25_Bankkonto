@@ -6,6 +6,8 @@ function Bankkonto.new()
 
     self.bankManager = BankManager.new()
 
+    Logging.info("[FS25_Bankkonto] BankManager erstellt")
+
     return self
 end
 
