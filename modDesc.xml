@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modDesc descVersion="110">
+
+    <author>DeinName</author>
+    <version>1.0.0.0</version>
+
+    <title>
+        <en>Bank Account</en>
+        <de>Bankkonto</de>
+    </title>
+
+    <description>
+        <en>Deposit money, withdraw money and earn monthly interest.</en>
+        <de>Geld einzahlen, auszahlen und monatliche Zinsen erhalten.</de>
+    </description>
+
+    <iconFilename>icon_bank.dds</iconFilename>
+
+    <multiplayer supported="true"/>
+
+    <extraSourceFiles>
+        <sourceFile filename="scripts/BankManager.lua"/>
+        <sourceFile filename="scripts/Bankkonto.lua"/>
+    </extraSourceFiles>
+
+</modDesc>
