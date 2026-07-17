@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <GUI>
+    <Frame name="BankFrame">
+
+        <BoxLayout
+            profile="menuBox"
+            width="500"
+            height="300"
+            horizontalAlignment="center"
+            verticalAlignment="middle">
+
+            <Text
+                profile="menuText"
+                text="FS25 Bankkonto"
+                textAlignment="center"/>
+
+            <Text
+                profile="menuText"
+                text="Girokonto: 100000 €"/>
+
+            <Text
+                profile="menuText"
+                text="Sparkonto: 0 €"/>
+
+        </BoxLayout>
+
+    </Frame>
 </GUI>

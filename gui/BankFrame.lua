@@ -2,8 +2,9 @@ BankFrame = {}
 BankFrame_mt = Class(BankFrame)
 
 function BankFrame.new()
-    local self = {}
-    setmetatable(self, BankFrame_mt)
+    local self = setmetatable({}, BankFrame_mt)
+
+    print("[FS25_Bankkonto] BankFrame erstellt")
 
     return self
 end
@@ -15,5 +16,3 @@ end
 function BankFrame:close()
     print("[FS25_Bankkonto] Bankfenster geschlossen")
 end
-
-print("[FS25_Bankkonto] BankFrame.lua geladen")

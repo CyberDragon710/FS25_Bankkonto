@@ -1,22 +1,15 @@
 BankManager = {}
+BankManager_mt = Class(BankManager)
 
-function BankManager:loadMap(mapNode)
+function BankManager.new()
+    local self = setmetatable({}, BankManager_mt)
 
     self.giro = 100000
-    self.spar = 0
+    self.sparkonto = 0
 
-    print("===================================")
-    print("[FS25_Bankkonto] BankManager gestartet")
-    print("[FS25_Bankkonto] Girokonto: " .. self.giro .. " €")
-    print("[FS25_Bankkonto] Sparkonto: " .. self.spar .. " €")
-    print("===================================")
+    print("[FS25_Bankkonto] BankManager erstellt")
 
-end
-
-function BankManager:deleteMap()
-
-    print("[FS25_Bankkonto] BankManager beendet")
-
+    return self
 end
 
 function BankManager:getGiro()
@@ -24,7 +17,15 @@ function BankManager:getGiro()
 end
 
 function BankManager:getSparkonto()
-    return self.spar
+    return self.sparkonto
+end
+
+function BankManager:setGiro(betrag)
+    self.giro = betrag
+end
+
+function BankManager:setSparkonto(betrag)
+    self.sparkonto = betrag
 end
 
 function BankManager:addGeld(betrag)
@@ -36,9 +37,9 @@ function BankManager:abheben(betrag)
     if self.giro >= betrag then
         self.giro = self.giro - betrag
         print("[FS25_Bankkonto] -" .. betrag .. " €")
-    else
-        print("[FS25_Bankkonto] Nicht genügend Guthaben!")
+        return true
     end
-end
 
-addModEventListener(BankManager)
+    print("[FS25_Bankkonto] Nicht genügend Guthaben!")
+    return false
+end

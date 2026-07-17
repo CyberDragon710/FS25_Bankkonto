@@ -2,26 +2,27 @@
 <modDesc descVersion="110">
 
     <author>CyberDragon710</author>
-    <version>0.1.0.0</version>
-    <iconFilename>icon.png</iconFilename>
+    <version>0.3.0.0</version>
 
     <title>
-        <en>Bank Account</en>
-        <de>Bankkonto</de>
+        <en>FS25 Bank Account</en>
+        <de>FS25 Bankkonto</de>
     </title>
 
     <description>
-        <en>Bank system for Farming Simulator 25.</en>
-        <de>Bankensystem für den Landwirtschafts-Simulator 25.</de>
+        <en>Advanced banking system for Farming Simulator 25.</en>
+        <de>Erweitertes Bankensystem für den Landwirtschafts-Simulator 25.</de>
     </description>
+
+    <iconFilename>icon.png</iconFilename>
 
     <multiplayer supported="true"/>
 
     <extraSourceFiles>
-        <sourceFile filename="scripts/BankManager.lua"/>
         <sourceFile filename="scripts/Bankkonto.lua"/>
-        <sourceFile filename="gui/BankFrame.lua"/>
+        <sourceFile filename="scripts/BankManager.lua"/>
         <sourceFile filename="scripts/SaveManager.lua"/>
+        <sourceFile filename="gui/BankFrame.lua"/>
     </extraSourceFiles>
 
 </modDesc>
