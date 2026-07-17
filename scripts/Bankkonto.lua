@@ -1,18 +1,16 @@
 Bankkonto = {}
-local Bankkonto_mt = Class(Bankkonto)
+Bankkonto_mt = Class(Bankkonto)
 
 function Bankkonto.new()
     local self = setmetatable({}, Bankkonto_mt)
 
-    self.bankManager = BankManager.new()
-
-    Logging.info("[FS25_Bankkonto] BankManager erstellt")
+    print("[FS25_Bankkonto] Bankkonto.lua geladen")
 
     return self
 end
 
-function Bankkonto:loadMap(mapNode, mapFilename)
-    Logging.info("[FS25_Bankkonto] Mod geladen")
+function Bankkonto:loadMap(mapNode)
+    print("[FS25_Bankkonto] Mod geladen")
 end
 
 function Bankkonto:update(dt)
@@ -20,8 +18,8 @@ function Bankkonto:update(dt)
 end
 
 function Bankkonto:deleteMap()
-    Logging.info("[FS25_Bankkonto] Mod beendet")
+    print("[FS25_Bankkonto] Mod beendet")
 end
 
 g_bankkonto = Bankkonto.new()
-addModEventListener(g_bankkonto)
+addModEventListener(g_bankkonto)anager, BankFrame und SaveManager)

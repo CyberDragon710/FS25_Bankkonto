@@ -1,68 +1,44 @@
 BankManager = {}
-BankManager_mt = Class(BankManager)
 
-function BankManager.new()
-    local self = setmetatable({}, BankManager_mt)
+function BankManager:loadMap(mapNode)
 
-    self.giroBalance = 0
-    self.savingsBalance = 0
-    self.interestRate = 0.012
+    self.giro = 100000
+    self.spar = 0
 
-    return self
+    print("===================================")
+    print("[FS25_Bankkonto] BankManager gestartet")
+    print("[FS25_Bankkonto] Girokonto: " .. self.giro .. " €")
+    print("[FS25_Bankkonto] Sparkonto: " .. self.spar .. " €")
+    print("===================================")
+
 end
 
-function BankManager:getGiroBalance()
-    return self.giroBalance
+function BankManager:deleteMap()
+
+    print("[FS25_Bankkonto] BankManager beendet")
+
 end
 
-function BankManager:getSavingsBalance()
-    return self.savingsBalance
+function BankManager:getGiro()
+    return self.giro
 end
 
-function BankManager:depositToSavings(amount)
-    amount = math.floor(amount)
+function BankManager:getSparkonto()
+    return self.spar
+end
 
-    if amount <= 0 then
-        return false
+function BankManager:addGeld(betrag)
+    self.giro = self.giro + betrag
+    print("[FS25_Bankkonto] +" .. betrag .. " €")
+end
+
+function BankManager:abheben(betrag)
+    if self.giro >= betrag then
+        self.giro = self.giro - betrag
+        print("[FS25_Bankkonto] -" .. betrag .. " €")
+    else
+        print("[FS25_Bankkonto] Nicht genügend Guthaben!")
     end
-
-    self.savingsBalance = self.savingsBalance + amount
-
-    Logging.info("[Bankkonto] Einzahlung Sparkonto: %d €", amount)
-
-    return true
 end
 
-function BankManager:withdrawFromSavings(amount)
-    amount = math.floor(amount)
-
-    if amount <= 0 then
-        return false
-    end
-
-    if amount > self.savingsBalance then
-        return false
-    end
-
-    self.savingsBalance = self.savingsBalance - amount
-
-    Logging.info("[Bankkonto] Auszahlung Sparkonto: %d €", amount)
-
-    return true
-end
-
-function BankManager:addMonthlyInterest()
-    local interest = math.floor(self.savingsBalance * self.interestRate + 0.5)
-
-    if interest > 0 then
-        self.savingsBalance = self.savingsBalance + interest
-
-        Logging.info(
-            "[Bankkonto] Monatszinsen: %d € (Kontostand: %d €)",
-            interest,
-            self.savingsBalance
-        )
-    end
-
-    return interest
-end
+addModEventListener(BankManager)

@@ -20,6 +20,8 @@
     <extraSourceFiles>
         <sourceFile filename="scripts/BankManager.lua"/>
         <sourceFile filename="scripts/Bankkonto.lua"/>
+        <sourceFile filename="gui/BankFrame.lua"/>
+        <sourceFile filename="scripts/SaveManager.lua"/>
     </extraSourceFiles>
 
 </modDesc>
